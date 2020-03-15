@@ -18,7 +18,7 @@ set softtabstop=0
 set shiftwidth=2
 set tabstop=2
 
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   Plug 'bling/vim-airline'
   Plug 'Xuyuanp/nerdtree-git-plugin'
