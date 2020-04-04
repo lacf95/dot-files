@@ -39,8 +39,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'morhetz/gruvbox'
 call plug#end()
 
-let mapleader=','
-
 " NERDTree Configuration
 nnoremap <leader>n :NERDTreeToggle<CR>
 
