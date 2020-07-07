@@ -10,6 +10,7 @@ set number
 set termguicolors
 set splitright
 set splitbelow
+set cursorline
 filetype on
 
 " Tab behavior
@@ -37,10 +38,12 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'herringtondarkholme/yats.vim'
   Plug 'morhetz/gruvbox'
+  Plug 'mkitt/tabline.vim'
+  Plug 'tpope/vim-obsession'
 call plug#end()
 
 " NERDTree Configuration
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeToggle<CR>
 
 " Source this file shortcut
 nnoremap <leader>r :source ~/.config/nvim/init.vim<CR>
@@ -68,3 +71,15 @@ nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 " Use Ctrl + J to add new line below current line
 nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+
+" Set tags command
+set tags=tags
+
+let g:gutentags_file_list_command = 'rg --files --hidden'
+
+" Use relative numbers on active buffers only
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+augroup END
