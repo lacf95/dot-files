@@ -49,8 +49,6 @@ sed -i "s/'prompt'/'prompt'\ \\\\/g" ~/.config/zsh/.zpreztorc
 
 sed -i "/'prompt'\ \\\\/a \ \ 'git'" ~/.config/zsh/.zpreztorc
 
-sed -i "s/'prompt'/'prompt'\ \\\\/g" ~/.config/zsh/.zpreztorc
-
 sed -i "s/key-bindings\ 'emacs'/key-bindings\ 'vi'/g" ~/.config/zsh/.zpreztorc
 
 sed -i "s/theme\ 'sorin'/theme\ 'agnoster'/g" ~/.config/zsh/.zpreztorc
