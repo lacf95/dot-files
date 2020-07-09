@@ -38,3 +38,19 @@ setopt EXTENDED_GLOB
 for rcfile in ~/.config/zsh/prezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" ~/.config/zsh/."${rcfile:t}"
 done
+
+sed -i 's/\.zprezto/prezto/g' ~/.config/zsh/.zshrc
+
+sed -i "/'environment'/i \ \ 'autosuggestions'\ \\\\" ~/.config/zsh/.zpreztorc
+
+sed -i "/'directory'/i \ \ 'history-substring-search'\ \\\\" ~/.config/zsh/.zpreztorc
+
+sed -i "s/'prompt'/'prompt'\ \\\\/g" ~/.config/zsh/.zpreztorc
+
+sed -i "/'prompt'\ \\\\/a \ \ 'git'" ~/.config/zsh/.zpreztorc
+
+sed -i "s/'prompt'/'prompt'\ \\\\/g" ~/.config/zsh/.zpreztorc
+
+sed -i "s/key-bindings\ 'emacs'/key-bindings\ 'vi'/g" ~/.config/zsh/.zpreztorc
+
+sed -i "s/theme\ 'sorin'/theme\ 'agnoster'/g" ~/.config/zsh/.zpreztorc

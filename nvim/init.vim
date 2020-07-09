@@ -81,6 +81,6 @@ highlight VertSplit gui=NONE cterm=NONE
 highlight clear SignColumn
 set bg=dark
 
-if has('nvim')
+if has('nvim') && has('multi_byte')
   set fillchars=vert:\│,eob:\ 
 endif
