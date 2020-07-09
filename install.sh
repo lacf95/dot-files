@@ -4,11 +4,11 @@
 mkdir -p ~/.config
 
 # Zsh
-if [ -f ~/.zshrc ]; then
-  cat <(echo) ./.zshrc >> ~/.zshrc
-else
-  cp ./.zshrc_shebang >> ~/.zshrc
+if [ ! -f ~/.zshrc ]; then
+  echo "#!/usr/bin/env zsh" >> ~/.zshrc
 fi
+
+cat <(echo) ./zshrc >> ~/.zshrc
 
 cp -r ./zsh ~/.config/zsh
 
@@ -20,9 +20,9 @@ done
 
 # Tmux configuration
 if [ -f ~/.tmux.conf ]; then
-  cat <(echo) ./.tmux.conf >> ~/.tmux.conf
+  cat <(echo) ./tmux.conf >> ~/.tmux.conf
 else
-  cp ./.tmux.conf >> ~/.tmux.conf
+  cp ./tmux.conf >> ~/.tmux.conf
 fi
 
 cp -r ./tmux ~/.config/tmux

@@ -53,15 +53,6 @@ nnoremap <leader>o :tabnew ~/.config/nvim/init.vim<CR>
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 noremap <c-p> :FZF<CR>
 noremap <c-s> :Rg<CR>
- 
-" Additional UI configuration
-colorscheme gruvbox
-highlight VertSplit gui=NONE cterm=NONE
-highlight clear SignColumn
-
-if has('nvim')
-  set fillchars=vert:\│,eob:\ 
-endif
 
 " Neomake to run everytime
 call neomake#configure#automake('nrwi', 500)
@@ -83,3 +74,12 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 augroup END
+ 
+" Additional UI configuration
+colorscheme gruvbox
+highlight VertSplit gui=NONE cterm=NONE
+highlight clear SignColumn
+
+if has('nvim')
+  set fillchars=vert:\│,eob:\ 
+endif
