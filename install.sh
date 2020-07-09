@@ -52,3 +52,8 @@ sed -i "/'prompt'\ \\\\/a \ \ 'git'" ~/.config/zsh/.zpreztorc
 sed -i "s/key-bindings\ 'emacs'/key-bindings\ 'vi'/g" ~/.config/zsh/.zpreztorc
 
 sed -i "s/theme\ 'sorin'/theme\ 'agnoster'/g" ~/.config/zsh/.zpreztorc
+
+# Alacritty
+if command -v alacritty &> /dev/null; then
+  cp -r ./alacritty ~/.config/alacritty
+fi
