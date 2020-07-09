@@ -4,11 +4,11 @@
 mkdir -p ~/.config
 
 # Zsh
-if [ ! -f ~/.zshrc ]; then
-  echo "#!/usr/bin/env zsh" >> ~/.zshrc
+if [ ! -f ~/.zshenv ]; then
+  echo "#!/usr/bin/env zsh" >> ~/.zshenv
 fi
 
-cat <(echo) ./zshrc >> ~/.zshrc
+cat <(echo) ./zshenv >> ~/.zshenv
 
 cp -r ./zsh ~/.config/zsh
 
@@ -36,5 +36,5 @@ cp ./fonts/* ~/.local/share/fonts
 # Prezto
 setopt EXTENDED_GLOB
 for rcfile in ~/.config/zsh/prezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "~/.config/zsh/.${rcfile:t}"
+  ln -s "$rcfile" ~/.config/zsh/."${rcfile:t}"
 done
