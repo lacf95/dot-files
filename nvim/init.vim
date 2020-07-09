@@ -79,6 +79,7 @@ augroup END
 colorscheme gruvbox
 highlight VertSplit gui=NONE cterm=NONE
 highlight clear SignColumn
+set bg=dark
 
 if has('nvim')
   set fillchars=vert:\│,eob:\ 

@@ -12,12 +12,6 @@ cat <(echo) ./zshrc >> ~/.zshrc
 
 cp -r ./zsh ~/.config/zsh
 
-# Prezto
-setopt EXTENDED_GLOB
-for rcfile in ~/.config/zsh/zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "~/.config/zsh/.${rcfile:t}"
-done
-
 # Tmux configuration
 if [ -f ~/.tmux.conf ]; then
   cat <(echo) ./tmux.conf >> ~/.tmux.conf
@@ -38,3 +32,9 @@ nvim -E -s -u ~/.config/nvim/init.vim +PlugInstall +qall
 # NERDFont SauceCodePro mono
 mkdir -p ~/.local/share/fonts
 cp ./fonts/* ~/.local/share/fonts
+
+# Prezto
+setopt EXTENDED_GLOB
+for rcfile in ~/.config/zsh/prezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "~/.config/zsh/.${rcfile:t}"
+done
