@@ -53,6 +53,8 @@ sed -i "s/key-bindings\ 'emacs'/key-bindings\ 'vi'/g" ~/.config/zsh/.zpreztorc
 
 sed -i "s/theme\ 'sorin'/theme\ 'agnoster'/g" ~/.config/zsh/.zpreztorc
 
+sed -i "s/#\ zstyle\ ':prezto:module:tmux:auto-start'\ local\ 'yes'/zstyle\ ':prezto:module:tmux:auto-start'\ local\ 'yes'" ~/.config/zsh/.zpreztorc
+
 # Alacritty
 if command -v alacritty &> /dev/null; then
   cp -r ./alacritty ~/.config/alacritty
