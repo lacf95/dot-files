@@ -4,3 +4,6 @@
 [submodule "zsh/prezto"]
 	path = zsh/prezto
 	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "tmux/plugins/tmux-yank"]
+	path = tmux/plugins/tmux-yank
+	url = https://github.com/tmux-plugins/tmux-yank.git

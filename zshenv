@@ -1,4 +1,3 @@
-export EDITOR=nvim
 export ZDOTDIR=~/.config/zsh
 export TMUXDOTDIR=~/.config/tmux
 
