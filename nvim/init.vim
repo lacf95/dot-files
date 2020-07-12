@@ -47,7 +47,7 @@ nnoremap <leader>f :NERDTreeToggle<CR>
 
 " Source this file shortcut
 nnoremap <leader>r :source ~/.config/nvim/init.vim<CR>
-nnoremap <leader>o :tabnew ~/.config/nvim/init.vim<CR>
+nnoremap <leader>o :tab drop ~/.config/nvim/init.vim<CR>
 
 " Fuzzy finder configuration
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
