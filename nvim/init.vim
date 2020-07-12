@@ -76,10 +76,13 @@ augroup numbertoggle
 augroup END
  
 " Additional UI configuration
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_invert_selection = '0'
 colorscheme gruvbox
+set bg=dark
 highlight VertSplit gui=NONE cterm=NONE
 highlight clear SignColumn
-set bg=dark
+highlight Comment gui=italic cterm=italic
 
 if has('nvim') && has('multi_byte')
   set fillchars=vert:\│,eob:\ 
