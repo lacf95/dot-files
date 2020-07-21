@@ -12,12 +12,17 @@ set splitright
 set splitbelow
 set cursorline
 filetype on
+set colorcolumn=80
 
 " Tab behavior
 set expandtab
 set softtabstop=0
 set shiftwidth=2
 set tabstop=2
+
+" Dictionary and Spelling
+setlocal spell spelllang=en_us
+set dictionary+=/usr/share/dict/words
 
 call plug#begin('~/.config/nvim/plugged')
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -40,6 +45,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'morhetz/gruvbox'
   Plug 'mkitt/tabline.vim'
   Plug 'tpope/vim-obsession'
+  Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " NERDTree Configuration

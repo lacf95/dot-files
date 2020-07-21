@@ -16,7 +16,7 @@ cp -r ./zsh ~/.config/zsh
 if [ -f ~/.tmux.conf ]; then
   cat <(echo) ./tmux.conf >> ~/.tmux.conf
 else
-  cp ./tmux.conf >> ~/.tmux.conf
+  cp ./tmux.conf ~/.tmux.conf
 fi
 
 cp -r ./tmux ~/.config/tmux
