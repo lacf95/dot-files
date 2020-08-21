@@ -39,6 +39,8 @@ for rcfile in ~/.config/zsh/prezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" ~/.config/zsh/."${rcfile:t}"
 done
 
+echo 'bindkey "^A" vi-beginning-of-line' >> ~/.config/zsh/.zshrc
+
 sed -i 's/\.zprezto/prezto/g' ~/.config/zsh/.zshrc
 
 sed -i "/'environment'/i \ \ 'autosuggestions'\ \\\\" ~/.config/zsh/.zpreztorc
