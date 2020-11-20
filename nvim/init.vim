@@ -34,18 +34,16 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'neomake/neomake'
   Plug 'tpope/vim-endwise'
   Plug 'airblade/vim-gitgutter'
-  Plug 'othree/yajs.vim'
   Plug 'ryanoasis/vim-devicons'
   Plug 'tpope/vim-fugitive'
   Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
-  Plug 'ervandew/supertab'
   Plug 'ludovicchabant/vim-gutentags'
-  Plug 'herringtondarkholme/yats.vim'
   Plug 'morhetz/gruvbox'
   Plug 'mkitt/tabline.vim'
   Plug 'tpope/vim-obsession'
   Plug 'junegunn/goyo.vim'
+  Plug 'nelstrom/vim-visual-star-search'
 call plug#end()
 
 " NERDTree Configuration
@@ -62,8 +60,8 @@ command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-hea
 noremap <c-p> :FZF<CR>
 noremap <c-s> :Rg<CR>
 
-" Neomake to run everytime
-call neomake#configure#automake('nrwi', 500)
+" Neomake to run every write and read
+call neomake#configure#automake('rw', 1000)
 
 " Use Ctrl + K to add new line above current line
 nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
