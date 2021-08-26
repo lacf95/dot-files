@@ -80,6 +80,16 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
 augroup END
+
+augroup golang
+  autocmd!
+  autocmd FileType go setlocal noexpandtab preserveindent copyindent tabstop=4 shiftwidth=4
+augroup END
+
+augroup docker
+  autocmd!
+  autocmd BufNewFile,BufRead *.dockerfile set syntax=dockerfile
+augroup END
  
 " Additional UI configuration
 let g:gruvbox_contrast_dark = 'hard'
