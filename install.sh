@@ -40,12 +40,15 @@ for rcfile in ~/.config/zsh/prezto/runcoms/^README.md(.N); do
 done
 
 echo 'bindkey "^A" vi-beginning-of-line' >> ~/.config/zsh/.zshrc
+echo 'bindkey "^H" backward-delete-char' >> ~/.config/zsh/.zshrc
+echo 'bindkey "^W" backward-kill-word' >> ~/.config/zsh/.zshrc
+echo 'bindkey "^U" kill-whole-line' >> ~/.config/zsh/.zshrc
+echo 'bindkey "^P" history-substring-search-up' >> ~/.config/zsh/.zshrc
+echo 'bindkey "^N" history-substring-search-down' >> ~/.config/zsh/.zshrc
 
 sed -i 's/\.zprezto/prezto/g' ~/.config/zsh/.zshrc
 
-sed -i "/'environment'/i \ \ 'autosuggestions'\ \\\\" ~/.config/zsh/.zpreztorc
-
-sed -i "/'directory'/i \ \ 'history-substring-search'\ \\\\" ~/.config/zsh/.zpreztorc
+sed -i "/'history-substring-search'/i \ \ 'autosuggestions'\ \\\\" ~/.config/zsh/.zpreztorc
 
 sed -i "s/'prompt'/'prompt'\ \\\\/g" ~/.config/zsh/.zpreztorc
 

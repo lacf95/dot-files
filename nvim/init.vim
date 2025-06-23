@@ -13,6 +13,7 @@ set splitbelow
 set cursorline
 filetype on
 set colorcolumn=80
+set mouse=
 
 " Tab behavior
 set expandtab
@@ -26,7 +27,8 @@ set dictionary+=/usr/share/dict/words
 
 call plug#begin('~/.config/nvim/plugged')
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-  Plug 'bling/vim-airline'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
@@ -44,6 +46,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-obsession'
   Plug 'junegunn/goyo.vim'
   Plug 'nelstrom/vim-visual-star-search'
+  Plug 'cormacrelf/vim-colors-github'
+  Plug 'elixir-editors/vim-elixir'
+  Plug 'digitaltoad/vim-jade'
+  Plug 'jvirtanen/vim-hcl'
 call plug#end()
 
 " NERDTree Configuration
@@ -52,6 +58,7 @@ nnoremap <leader>f :NERDTreeToggle<CR>
 " Source this file shortcut
 nnoremap <leader>r :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>o :tab drop ~/.config/nvim/init.vim<CR>
+nnoremap <leader>b :Git blame<CR>
 
 " Fuzzy finder configuration
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
@@ -99,6 +106,12 @@ set bg=dark
 highlight VertSplit gui=NONE cterm=NONE
 highlight clear SignColumn
 highlight Comment gui=italic cterm=italic
+
+let g:airline_theme = 'base16_gruvbox_dark_hard'
+let g:airline#extensions#branch#displayed_head_limit = 20
+let g:airline_section_a = '%#__accent_bold#%{airline#util#wrap(airline#parts#mode(),0)}%#__restore__#%{airline#util#append(airline#parts#crypt(),0)}%{airline#util#append(airline#parts#paste(),0)}%{airline#util#append(airline#extensions#keymap#status(),0)}%{airline#util#append(airline#extensions#xkblayout#status(),0)}%{airline#util#append(airline#parts#iminsert(),0)}'
+let g:airline_section_y = ''
+let g:airline_section_z = '%#__accent_bold#%{g:airline_symbols.linenr}%2l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__#%#__accent_bold#%{g:airline_symbols.colnr}%v%#__restore__#'
 
 if has('nvim') && has('multi_byte')
   set fillchars=vert:\│,eob:\ 
